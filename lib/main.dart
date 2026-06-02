@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'screens/home.dart';
 
 void main() {
-runApp(const RabahDj());
+  runApp(const RabahDj());
 }
 
 class RabahDj extends StatelessWidget {
-const RabahDj({super.key});
+  const RabahDj({super.key});
 
-@override
-Widget build(BuildContext context) {
-return MaterialApp(
-debugShowCheckedModeBanner: false,
-title: 'RabahDj Pro',
-theme: ThemeData.dark(),
-home: const HomePage(),
-);
-}
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'RabahDj Pro',
+      theme: ThemeData.dark(),
+      home: const HomeScreen(),
+    );
+  }
 }
 
 class HomePage extends StatefulWidget {
@@ -58,7 +59,7 @@ posts[index]["likes"]++;
 
 @override
 Widget build(BuildContext context) {
-return Scaffold(
+return Scaffold()
 appBar: AppBar(
 title: const Text("📸 RabahDj Pro"),
 centerTitle: true,
@@ -88,7 +89,7 @@ onPressed: addPost,
 child: const Text("Post 🚀"),
 ),
 Expanded(
-child: ListView.builder(
+child: ListView.builder()
 itemCount: posts.length,
 itemBuilder: (context, i) {
 final post = posts[i];
@@ -114,3 +115,4 @@ final post = posts[i];
 
 }
 }
+  
