@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/home.dart';
+import 'screens/profile.dart';
 
 void main() {
   runApp(const RabahDj());
@@ -14,7 +15,7 @@ class RabahDj extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'RabahDj Pro',
       theme: ThemeData.dark(),
-      home: const HomeScreen(),
+      home: const ProfileScreen(),
     );
   }
 }
