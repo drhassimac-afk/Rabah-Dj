@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import '../services/database_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+Future<void> loadPosts() async {
+final data = await DatabaseService.getPosts();
+
+setState(() {
+posts = data;
+});
+}
+
 
   final ImagePicker picker = ImagePicker();
   XFile? selectedImage;
@@ -32,7 +41,27 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   ];
 
-  void addPost() {
+  Future<void> addPost() async {
+if (contentCtrl.text.isEmpty && selectedImage == null) return;
+
+final post = {
+"user": usernameCtrl.text.isEmpty
+? "RabahDj"
+: usernameCtrl.text,
+"text": contentCtrl.text,
+"image": selectedImage?.path,
+"likes": 0,
+};
+
+await DatabaseService.insertPost(post);
+
+await loadPosts();
+
+contentCtrl.clear();
+selectedImage = null;
+}
+
+
     if (contentCtrl.text.isEmpty && selectedImage == null) return;
 
     setState(() {
@@ -49,14 +78,22 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> pickImage() async {
-    final image = await picker.pickImage(source: ImageSource.gallery);
+  final image = await picker.pickImage(
+    source: ImageSource.gallery,
+  );
 
-    if (image != null) {
-      setState(() {
-        selectedImage = image;
-      });
-    }
+  if (image != null) {
+    setState(() {
+      selectedImage = image;
+    });
   }
+}
+
+@override
+void initState() {
+  super.initState();
+  loadPosts();
+}
 
   @override
   Widget build(BuildContext context) {
