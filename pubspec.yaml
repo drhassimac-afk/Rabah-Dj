@@ -1,20 +1,15 @@
-name: rabah_dj_pro
-description: RabahDj Pro
-
-publish_to: 'none'
-
 version: 1.0.0+1
 
 environment:
-sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-flutter:
-sdk: flutter
-image_picker: ^1.0.7
-sqflite: ^2.3.3
-path: ^1.9.0
+  flutter:
+    sdk: flutter
 
+  image_picker: ^1.0.7
+  sqflite: ^2.3.3
+  path: ^1.9.0
 
 flutter:
-uses-material-design: true
+  uses-material-design: true
