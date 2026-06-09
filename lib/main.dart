@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
-import 'screens/profile.dart';
 
 void main() {
   runApp(const RabahDj());
@@ -21,99 +19,102 @@ class RabahDj extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-const HomePage({super.key});
+  const HomePage({super.key});
 
-@override
-State<HomePage> createState() => _HomePageState();
+  @override
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-List<Map<String, dynamic>> posts = [];
+  final List<Map<String, dynamic>> posts = [];
 
-final usernameCtrl = TextEditingController();
-final contentCtrl = TextEditingController();
+  final TextEditingController usernameCtrl = TextEditingController();
+  final TextEditingController contentCtrl = TextEditingController();
 
-void addPost() {
-if (contentCtrl.text.isEmpty) return;
+  @override
+  void dispose() {
+    usernameCtrl.dispose();
+    contentCtrl.dispose();
+    super.dispose();
+  }
 
-```
-setState(() {
-  posts.insert(0, {
-    "user": usernameCtrl.text.isEmpty
-        ? "RabahDj"
-        : usernameCtrl.text,
-    "content": contentCtrl.text,
-    "likes": 0,
-  });
-});
+  void addPost() {
+    if (contentCtrl.text.trim().isEmpty) return;
 
-contentCtrl.clear();
-```
+    setState(() {
+      posts.insert(0, {
+        "user": usernameCtrl.text.trim().isEmpty
+            ? "RabahDj"
+            : usernameCtrl.text.trim(),
+        "content": contentCtrl.text.trim(),
+        "likes": 0,
+      });
+    });
 
-}
+    contentCtrl.clear();
+  }
 
-void likePost(int index) {
-setState(() {
-posts[index]["likes"]++;
-});
-}
+  void likePost(int index) {
+    setState(() {
+      posts[index]["likes"]++;
+    });
+  }
 
-@override
-Widget build(BuildContext context) {
-return Scaffold()
-appBar: AppBar(
-title: const Text("📸 RabahDj Pro"),
-centerTitle: true,
-),
-body: Column(
-children: [
-Padding(
-padding: const EdgeInsets.all(8),
-child: TextField(
-controller: usernameCtrl,
-decoration: const InputDecoration(
-hintText: "Username",
-),
-),
-),
-Padding(
-padding: const EdgeInsets.all(8),
-child: TextField(
-controller: contentCtrl,
-decoration: const InputDecoration(
-hintText: "What's happening?",
-),
-),
-),
-ElevatedButton(
-onPressed: addPost,
-child: const Text("Post 🚀"),
-),
-Expanded(
-child: ListView.builder()
-itemCount: posts.length,
-itemBuilder: (context, i) {
-final post = posts[i];
-
-```
-            return Card(
-              child: ListTile(
-                title: Text("@${post['user']}"),
-                subtitle: Text(post['content']),
-                trailing: IconButton(
-                  icon: Text("❤️ ${post['likes']}"),
-                  onPressed: () => likePost(i),
-                ),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("📸 RabahDj Pro"),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: TextField(
+              controller: usernameCtrl,
+              decoration: const InputDecoration(
+                hintText: "Username",
+                border: OutlineInputBorder(),
               ),
-            );
-          },
-        ),
-      )
-    ],
-  ),
-);
-```
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: TextField(
+              controller: contentCtrl,
+              decoration: const InputDecoration(
+                hintText: "What's happening?",
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: addPost,
+            child: const Text("Post 🚀"),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (context, i) {
+                final post = posts[i];
 
+                return Card(
+                  margin: const EdgeInsets.all(8),
+                  child: ListTile(
+                    title: Text("@${post['user']}"),
+                    subtitle: Text(post['content']),
+                    trailing: IconButton(
+                      onPressed: () => likePost(i),
+                      icon: Text("❤️ ${post['likes']}"),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
-}
-  

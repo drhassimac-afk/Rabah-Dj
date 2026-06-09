@@ -1,84 +1,166 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import '../services/database_service.dart';
 
-class ProfileScreen extends StatelessWidget {
-const ProfileScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
-@override
-Widget build(BuildContext context) {
-return Scaffold(
-appBar: AppBar(
-title: const Text("Profile"),
-centerTitle: true,
-),
-
-```
-  body: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-
-      const CircleAvatar(
-        radius: 50,
-        backgroundColor: Colors.grey,
-        child: Icon(
-          Icons.person,
-          size: 60,
-          color: Colors.white,
-        ),
-      ),
-
-      const SizedBox(height: 20),
-
-      const Text(
-        "RabahDj",
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-
-      const SizedBox(height: 10),
-
-      const Text(
-        "🚀 Welcome to RabahDj Pro",
-        style: TextStyle(
-          color: Colors.grey,
-        ),
-      ),
-
-      const SizedBox(height: 30),
-
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: const [
-
-          Column(
-            children: [
-              Text("10", style: TextStyle(fontSize: 18)),
-              Text("Posts"),
-            ],
-          ),
-
-          Column(
-            children: [
-              Text("120", style: TextStyle(fontSize: 18)),
-              Text("Likes"),
-            ],
-          ),
-
-          Column(
-            children: [
-              Text("50", style: TextStyle(fontSize: 18)),
-              Text("Followers"),
-            ],
-          ),
-
-        ],
-      )
-
-    ],
-  ),
-);
-```
-
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
 }
+
+class _HomeScreenState extends State<HomeScreen> {
+  final ImagePicker picker = ImagePicker();
+  XFile? selectedImage;
+
+  final TextEditingController usernameCtrl = TextEditingController();
+  final TextEditingController contentCtrl = TextEditingController();
+
+  List<Map<String, dynamic>> posts = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadPosts();
+  }
+
+  @override
+  void dispose() {
+    usernameCtrl.dispose();
+    contentCtrl.dispose();
+    super.dispose();
+  }
+
+  Future<void> loadPosts() async {
+    final data = await DatabaseService.getPosts();
+
+    setState(() {
+      posts = data;
+    });
+  }
+
+  Future<void> addPost() async {
+    if (contentCtrl.text.isEmpty && selectedImage == null) {
+      return;
+    }
+
+    final post = {
+      "user": usernameCtrl.text.isEmpty
+          ? "RabahDj"
+          : usernameCtrl.text,
+      "text": contentCtrl.text,
+      "image": selectedImage?.path,
+      "likes": 0,
+    };
+
+    await DatabaseService.insertPost(post);
+    await loadPosts();
+
+    contentCtrl.clear();
+
+    setState(() {
+      selectedImage = null;
+    });
+  }
+
+  Future<void> pickImage() async {
+    final image = await picker.pickImage(
+      source: ImageSource.gallery,
+    );
+
+    if (image != null) {
+      setState(() {
+        selectedImage = image;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("RabahDj Pro"),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          TextField(
+            controller: usernameCtrl,
+            decoration: const InputDecoration(
+              hintText: "Username",
+            ),
+          ),
+          TextField(
+            controller: contentCtrl,
+            decoration: const InputDecoration(
+              hintText: "What's happening?",
+            ),
+          ),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: addPost,
+                child: const Text("Post 🚀"),
+              ),
+              IconButton(
+                onPressed: pickImage,
+                icon: const Icon(Icons.image),
+              ),
+            ],
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (context, index) {
+                final post = posts[index];
+
+                return Card(
+                  margin: const EdgeInsets.all(10),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "@${post["user"]}",
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(post["text"]?.toString() ?? ""),
+                        if (post["image"] != null)
+                          Image.file(
+                            File(post["image"].toString()),
+                          ),
+                        const SizedBox(height: 15),
+                        Row(
+                          children: [
+                            IconButton(
+                              icon: const Icon(Icons.favorite),
+                              onPressed: () {
+                                setState(() {
+                                  post["likes"] =
+                                      (post["likes"] ?? 0) + 1;
+                                });
+                              },
+                            ),
+                            Text(
+                              (post["likes"] ?? 0).toString(),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

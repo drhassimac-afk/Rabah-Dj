@@ -1,0 +1,118 @@
+   Woah! You appear to be trying to run flutter as root.
+   We strongly recommend running the flutter tool without superuser privileges.
+  /
+📎
+Analyzing RabahDj...                                            
+
+  error • Named parameters must be enclosed in curly braces ('{' and '}'). Try surrounding the named parameters in curly braces • home.dart:2:18 • named_parameter_outside_group
+  error • Using a colon as the separator before a default value is no longer supported. Try replacing the colon with an equal sign • home.dart:2:18 • obsolete_colon_for_default_value
+  error • Undefined name 'post'. Try correcting the name to one that is defined, or defining the name • home.dart:2:20 • undefined_identifier
+  error • The function 'FileImage' isn't defined. Try importing the library that defines 'FileImage', correcting the name to the name of an existing function, or defining a function named 'FileImage' • home.dart:3:9 • undefined_function
+  error • The function 'File' isn't defined. Try importing the library that defines 'File', correcting the name to the name of an existing function, or defining a function named 'File' • home.dart:3:19 • undefined_function
+  error • Undefined name 'post'. Try correcting the name to one that is defined, or defining the name • home.dart:3:24 • undefined_identifier
+  error • Named parameters must be enclosed in curly braces ('{' and '}'). Try surrounding the named parameters in curly braces • home.dart:5:8 • named_parameter_outside_group
+  error • Using a colon as the separator before a default value is no longer supported. Try replacing the colon with an equal sign • home.dart:5:8 • obsolete_colon_for_default_value
+  error • Undefined name 'post'. Try correcting the name to one that is defined, or defining the name • home.dart:5:10 • undefined_identifier
+  error • The name 'Icon' isn't a class. Try correcting the name to match an existing class • home.dart:6:15 • creation_with_non_type
+  error • Undefined name 'Icons'. Try correcting the name to one that is defined, or defining the name • home.dart:6:20 • undefined_identifier
+  error • A function body must be provided. Try adding a function body • home.dart:9:1 • missing_function_body
+  error • Expected an identifier • lib/main.dart:39:1 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:39:1 • expected_token
+  error • Expected an identifier • lib/main.dart:39:2 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:39:2 • expected_token
+  error • Expected an identifier • lib/main.dart:39:3 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:39:3 • expected_token
+  error • Expected an identifier • lib/main.dart:51:1 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:51:1 • expected_token
+  error • Expected an identifier • lib/main.dart:51:2 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:51:2 • expected_token
+  error • Expected an identifier • lib/main.dart:51:3 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:51:3 • expected_token
+  error • Expected to find ';' • lib/main.dart:63:17 • expected_token
+warning • Dead code. Try removing the code, or fixing the code before it so that it can be reached • lib/main.dart:64:1 • dead_code
+warning • The label 'appBar' isn't used. Try removing the label, or using it in either a 'break' or 'continue' statement • lib/main.dart:64:1 • unused_label
+  error • Expected to find ';' • lib/main.dart:67:1 • expected_token
+  error • Expected an identifier • lib/main.dart:67:2 • missing_identifier
+  error • Unexpected text ';'. Try removing the text • lib/main.dart:67:2 • unexpected_token
+warning • The label 'body' isn't used. Try removing the label, or using it in either a 'break' or 'continue' statement • lib/main.dart:68:1 • unused_label
+  error • 'Column' isn't a function. Try correcting the name to match an existing function, or define a method or function named 'Column' • lib/main.dart:68:7 • invocation_of_non_function
+  error • The name 'Column' is defined in the libraries 'package:flutter/src/widgets/basic.dart (via package:flutter/material.dart)' and 'package:rabah_dj/screens/profile.dart'. Try using 'as prefix' for one of the import directives, or hiding the name from all but one of the imports • lib/main.dart:68:7 • ambiguous_import
+  error • The named parameter 'itemBuilder' is required, but there's no corresponding argument. Try adding the required argument • lib/main.dart:93:8 • missing_required_argument
+  error • Expected to find ',' • lib/main.dart:94:1 • expected_token
+  error • The named parameter 'itemCount' isn't defined. Try correcting the name to an existing named parameter's name, or defining a named parameter with the name 'itemCount' • lib/main.dart:94:1 • undefined_named_parameter
+  error • The named parameter 'itemBuilder' isn't defined. Try correcting the name to an existing named parameter's name, or defining a named parameter with the name 'itemBuilder' • lib/main.dart:95:1 • undefined_named_parameter
+  error • Expected an identifier • lib/main.dart:98:1 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:98:1 • expected_token
+  error • Expected an identifier • lib/main.dart:98:2 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:98:2 • expected_token
+  error • Expected an identifier • lib/main.dart:98:3 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:98:3 • expected_token
+  error • Expected an identifier • lib/main.dart:111:7 • missing_identifier
+  error • Expected to find ']' • lib/main.dart:111:7 • expected_token
+  error • Expected to find ';' • lib/main.dart:113:3 • expected_token
+  error • Expected an identifier • lib/main.dart:113:4 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:113:4 • expected_token
+  error • Unexpected text ';'. Try removing the text • lib/main.dart:113:4 • unexpected_token
+  error • Expected an identifier • lib/main.dart:114:1 • missing_identifier
+  error • Unexpected text ';'. Try removing the text • lib/main.dart:114:1 • unexpected_token
+  error • Expected an identifier • lib/main.dart:115:1 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:115:1 • expected_token
+  error • Expected an identifier • lib/main.dart:115:2 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:115:2 • expected_token
+  error • Expected an identifier • lib/main.dart:115:3 • missing_identifier
+  error • Expected to find ';' • lib/main.dart:115:3 • expected_token
+  error • The class '_HomeScreenState' doesn't have an unnamed constructor. Try using one of the named constructors defined in '_HomeScreenState' • lib/screens/home.dart:10:38 • new_with_undefined_constructor_default
+warning • The declaration '<unnamed>' isn't referenced. Try removing the declaration of '<unnamed>' • lib/screens/home.dart:13:7 • unused_element
+  error • Missing concrete implementation of 'State.build'. Try implementing the missing method, or make the class abstract • lib/screens/home.dart:13:7 • non_abstract_class_inherits_abstract_member
+  error • Expected a class member. Try placing this code inside a class member • lib/screens/home.dart:65:5 • expected_class_member
+  error • Expected an identifier • lib/screens/home.dart:65:8 • missing_identifier
+  error • The prefix 'contentCtrl' can't be used here because it's shadowed by a local declaration. Try renaming either the prefix or the local declaration • lib/screens/home.dart:65:9 • prefix_shadowed_by_local_declaration
+  error • Expected an identifier • lib/screens/home.dart:65:25 • missing_identifier
+  error • Expected to find ')' • lib/screens/home.dart:65:26 • expected_token
+  error • A function body must be provided. Try adding a function body • lib/screens/home.dart:65:60 • missing_function_body
+  error • Expected an identifier • lib/screens/home.dart:65:66 • missing_identifier
+  error • Expected an identifier • lib/screens/home.dart:67:14 • missing_identifier
+  error • Expected to find ')' • lib/screens/home.dart:67:17 • expected_token
+  error • The name of a constructor must match the name of the enclosing class • lib/screens/home.dart:76:5 • invalid_constructor_name
+  error • The name 'selectedImage' is already defined. Try renaming one of the declarations • lib/screens/home.dart:77:5 • duplicate_definition
+  error • Variables must be declared using the keywords 'const', 'final', 'var' or a type name. Try adding the name of the type of the variable or the keyword 'var' • lib/screens/home.dart:77:5 • missing_const_final_var_or_type
+  error • Undefined name 'picker'. Try correcting the name to one that is defined, or defining the name • lib/screens/home.dart:81:23 • undefined_identifier
+  error • The function 'setState' isn't defined. Try importing the library that defines 'setState', correcting the name to the name of an existing function, or defining a function named 'setState' • lib/screens/home.dart:86:5 • undefined_function
+  error • Undefined name 'selectedImage'. Try correcting the name to one that is defined, or defining the name • lib/screens/home.dart:87:7 • undefined_identifier
+warning • The annotation 'override' can only be used on fields, getters, methods, or setters • lib/screens/home.dart:92:2 • invalid_annotation_target
+  error • Invalid context for 'super' invocation • lib/screens/home.dart:94:3 • super_in_invalid_context
+  error • The function 'loadPosts' isn't defined. Try importing the library that defines 'loadPosts', correcting the name to the name of an existing function, or defining a function named 'loadPosts' • lib/screens/home.dart:95:3 • undefined_function
+warning • The annotation 'override' can only be used on fields, getters, methods, or setters • lib/screens/home.dart:98:4 • invalid_annotation_target
+  error • Undefined name 'usernameCtrl'. Try correcting the name to one that is defined, or defining the name • lib/screens/home.dart:110:25 • undefined_identifier
+  error • Undefined name 'contentCtrl'. Try correcting the name to one that is defined, or defining the name • lib/screens/home.dart:117:25 • undefined_identifier
+  error • Undefined name 'addPost'. Try correcting the name to one that is defined, or defining the name • lib/screens/home.dart:126:28 • undefined_identifier
+  error • Undefined name 'posts'. Try correcting the name to one that is defined, or defining the name • lib/screens/home.dart:139:26 • undefined_identifier
+  error • Undefined name 'posts'. Try correcting the name to one that is defined, or defining the name • lib/screens/home.dart:141:30 • undefined_identifier
+  error • The function 'setState' isn't defined. Try importing the library that defines 'setState', correcting the name to the name of an existing function, or defining a function named 'setState' • lib/screens/home.dart:173:33 • undefined_function
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/home.dart:193:1 • expected_executable
+warning • This class (or a class that this class inherits from) is marked as '@immutable', but one or more of its instance fields aren't final: ProfileScreen.Widget • lib/screens/profile.dart:3:7 • must_be_immutable
+  error • Can't define a const constructor for a class with non-final fields. Try making all of the fields final, or removing the keyword 'const' from the constructor • lib/screens/profile.dart:4:8 • const_constructor_with_non_final_field
+  error • override isn't a type. Try correcting the name to match an existing type • lib/screens/profile.dart:6:2 • not_a_type
+  error • Expected to find ';' • lib/screens/profile.dart:7:2 • expected_token
+  error • Expected to find ';' • lib/screens/profile.dart:19:3 • expected_token
+  error • Variables must be declared using the keywords 'const', 'final', 'var' or a type name. Try adding the name of the type of the variable or the keyword 'var' • lib/screens/profile.dart:19:3 • missing_const_final_var_or_type
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/profile.dart:19:7 • expected_executable
+  error • Named parameters must be enclosed in curly braces ('{' and '}'). Try surrounding the named parameters in curly braces • lib/screens/profile.dart:20:22 • named_parameter_outside_group
+  error • Using a colon as the separator before a default value is no longer supported. Try replacing the colon with an equal sign • lib/screens/profile.dart:20:22 • obsolete_colon_for_default_value
+  error • Named parameters must be enclosed in curly braces ('{' and '}'). Try surrounding the named parameters in curly braces • lib/screens/profile.dart:21:13 • named_parameter_outside_group
+  error • Using a colon as the separator before a default value is no longer supported. Try replacing the colon with an equal sign • lib/screens/profile.dart:21:13 • obsolete_colon_for_default_value
+  error • The default value of an optional parameter must be constant • lib/screens/profile.dart:21:15 • non_constant_default_value
+  error • Methods can't be invoked in constant expressions • lib/screens/profile.dart:58:11 • const_eval_method_invocation
+  error • Methods can't be invoked in constant expressions • lib/screens/profile.dart:65:11 • const_eval_method_invocation
+  error • Methods can't be invoked in constant expressions • lib/screens/profile.dart:72:11 • const_eval_method_invocation
+  error • A function body must be provided. Try adding a function body • lib/screens/profile.dart:83:4 • missing_function_body
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/profile.dart:83:4 • expected_executable
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/profile.dart:84:1 • expected_executable
+  error • Unexpected text ';'. Try removing the text • lib/screens/profile.dart:84:2 • unexpected_token
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/profile.dart:85:1 • expected_executable
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/profile.dart:85:2 • expected_executable
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/profile.dart:85:3 • expected_executable
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/profile.dart:87:1 • expected_executable
+  error • Expected a method, getter, setter or operator declaration. This appears to be incomplete code. Try removing it or completing it • lib/screens/profile.dart:88:1 • expected_executable
+
+110 issues found. (ran in 4.9s)

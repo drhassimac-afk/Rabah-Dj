@@ -1,0 +1,20 @@
+Building flutter tool...
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (9 tries left)
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (8 tries left)
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (7 tries left)
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (6 tries left)
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (5 tries left)
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (4 tries left)
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (3 tries left)
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (2 tries left)
+/data/data/com.termux/files/home/flutter/bin/internal/shared.sh: line 23: /data/data/com.termux/files/home/flutter/bin/cache/dart-sdk/bin/dart: cannot execute: required file not found
+Error: Unable to 'pub upgrade' flutter tool. Retrying in five seconds... (1 tries left)
+Command 'pub upgrade' still failed after 10 tries, giving up.
